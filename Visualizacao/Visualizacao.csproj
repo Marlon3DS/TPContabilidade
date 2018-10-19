@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{869AC638-351D-4A9E-8C92-AFE6DDDDAAC8}</ProjectGuid>
+    <ProjectGuid>{DD607924-6610-4CCD-9643-78500A6DB635}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Visualizacao</RootNamespace>
     <AssemblyName>Visualizacao</AssemblyName>
@@ -78,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Controles\Controles.csproj">
-      <Project>{93E06863-A088-4FF0-83A1-01F7FE06AFF5}</Project>
-      <Name>Controles</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

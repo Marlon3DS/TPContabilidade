@@ -7,21 +7,21 @@ namespace Controles
         public override void EmpacotarParametros(object objeto, Metodo metodo)
         {
             Operacao operacao = (Operacao)objeto;
-            acesso.LimparParametros();
+            Acesso.LimparParametros();
             if (metodo == Metodo.Alterar || metodo == Metodo.Excluir)
             {
-                acesso.AdicionarParametros("@Id", operacao.Id);
+                Acesso.AdicionarParametros("@Id", operacao.Id);
             }
             else
             {
                 if (metodo == Metodo.Alterar || metodo == Metodo.Inserir)
                 {                    
-                    acesso.AdicionarParametros("@Data", operacao.Data);
-                    acesso.AdicionarParametros("@Local", operacao.Local);
-                    acesso.AdicionarParametros("@Destino", operacao.Destino);
-                    acesso.AdicionarParametros("@Origem", operacao.Origem);
-                    acesso.AdicionarParametros("@Historico", operacao.Historico);
-                    acesso.AdicionarParametros("@Valor", operacao.Valor);
+                    Acesso.AdicionarParametros("@Data", operacao.Data);
+                    Acesso.AdicionarParametros("@Local", operacao.Local);
+                    Acesso.AdicionarParametros("@Destino", operacao.Destino);
+                    Acesso.AdicionarParametros("@Origem", operacao.Origem);
+                    Acesso.AdicionarParametros("@Historico", operacao.Historico);
+                    Acesso.AdicionarParametros("@Valor", operacao.Valor);
                 }
             }
         }

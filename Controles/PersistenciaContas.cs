@@ -7,18 +7,18 @@ namespace Controles
         public override void EmpacotarParametros(object objeto, Metodo metodo)
         {
             ContaT operacao = (ContaT)objeto;
-            acesso.LimparParametros();
+            Acesso.LimparParametros();
             if (metodo == Metodo.Alterar || metodo == Metodo.Excluir)
             {
-                acesso.AdicionarParametros("@Id", operacao.Id);
+                Acesso.AdicionarParametros("@Id", operacao.Id);
             }
             else
             {
                 if (metodo == Metodo.Alterar || metodo == Metodo.Inserir)
                 {
-                    acesso.AdicionarParametros("@Nome", operacao.Nome);
-                    acesso.AdicionarParametros("@TipoConta", operacao.TipoConta);
-                    acesso.AdicionarParametros("@Saldo", operacao.Saldo);
+                    Acesso.AdicionarParametros("@Nome", operacao.Nome);
+                    Acesso.AdicionarParametros("@TipoConta", operacao.TipoConta);
+                    Acesso.AdicionarParametros("@Saldo", operacao.Saldo);
                 }
             }
         }
