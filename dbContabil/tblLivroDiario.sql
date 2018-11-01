@@ -8,5 +8,5 @@
     [Historico] VARCHAR(MAX) NOT NULL, 
     [Valor] DECIMAL NOT NULL, 
     CONSTRAINT [FK_Destino] FOREIGN KEY (Destino) REFERENCES [tblContasT](Id), 
-	CONSTRAINT [FK_Origem] FOREIGN KEY (Origem) REFERENCES [tblContasT](Id), 
+	CONSTRAINT [FK_Origem] FOREIGN KEY (Origem) REFERENCES [tblContasT](Id)
 )

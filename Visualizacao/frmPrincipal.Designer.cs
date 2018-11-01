@@ -45,10 +45,11 @@
             this.menuRelatoriosPagamentos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelatoriosIcms = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelatoriosDre = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCadastrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCadastrarClientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCadastrarFornecedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCadastrarProdutos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGerenciar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGerenciarClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGerenciarFornecedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGerenciarFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGerenciarProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +61,10 @@
             this.menuConfig,
             this.menuDiario,
             this.menuRelatorios,
-            this.menuCadastrar});
+            this.menuGerenciar});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(800, 29);
+            this.menuPrincipal.Size = new System.Drawing.Size(854, 29);
             this.menuPrincipal.TabIndex = 0;
             // 
             // menuConfig
@@ -85,6 +86,7 @@
             this.menuConfigEmpresa.Name = "menuConfigEmpresa";
             this.menuConfigEmpresa.Size = new System.Drawing.Size(212, 26);
             this.menuConfigEmpresa.Text = "Empresa";
+            this.menuConfigEmpresa.Click += new System.EventHandler(this.menuConfigEmpresa_Click);
             // 
             // menuConfigImpostos
             // 
@@ -107,7 +109,7 @@
             // menuConfigImpostosIrpf
             // 
             this.menuConfigImpostosIrpf.Name = "menuConfigImpostosIrpf";
-            this.menuConfigImpostosIrpf.Size = new System.Drawing.Size(98, 22);
+            this.menuConfigImpostosIrpf.Size = new System.Drawing.Size(114, 26);
             this.menuConfigImpostosIrpf.Text = "IRPF";
             // 
             // menuConfigContas
@@ -124,25 +126,25 @@
             this.menuDiarioVenda,
             this.menuDiarioRegistro});
             this.menuDiario.Name = "menuDiario";
-            this.menuDiario.Size = new System.Drawing.Size(79, 20);
+            this.menuDiario.Size = new System.Drawing.Size(103, 25);
             this.menuDiario.Text = "Livro Diario";
             // 
             // menuDiarioCompra
             // 
             this.menuDiarioCompra.Name = "menuDiarioCompra";
-            this.menuDiarioCompra.Size = new System.Drawing.Size(171, 22);
+            this.menuDiarioCompra.Size = new System.Drawing.Size(209, 26);
             this.menuDiarioCompra.Text = "Lançar Compra";
             // 
             // menuDiarioVenda
             // 
             this.menuDiarioVenda.Name = "menuDiarioVenda";
-            this.menuDiarioVenda.Size = new System.Drawing.Size(171, 22);
+            this.menuDiarioVenda.Size = new System.Drawing.Size(209, 26);
             this.menuDiarioVenda.Text = "Lançar Venda";
             // 
             // menuDiarioRegistro
             // 
             this.menuDiarioRegistro.Name = "menuDiarioRegistro";
-            this.menuDiarioRegistro.Size = new System.Drawing.Size(171, 22);
+            this.menuDiarioRegistro.Size = new System.Drawing.Size(209, 26);
             this.menuDiarioRegistro.Text = "Consultar Registro";
             // 
             // menuRelatorios
@@ -154,72 +156,79 @@
             this.menuRelatoriosIcms,
             this.menuRelatoriosDre});
             this.menuRelatorios.Name = "menuRelatorios";
-            this.menuRelatorios.Size = new System.Drawing.Size(102, 20);
+            this.menuRelatorios.Size = new System.Drawing.Size(135, 25);
             this.menuRelatorios.Text = "Gerar Relatórios";
             // 
             // menuRelatoriosBalanco
             // 
             this.menuRelatoriosBalanco.Name = "menuRelatoriosBalanco";
-            this.menuRelatoriosBalanco.Size = new System.Drawing.Size(188, 22);
+            this.menuRelatoriosBalanco.Size = new System.Drawing.Size(228, 26);
             this.menuRelatoriosBalanco.Text = "Balanço Patrimonial";
             // 
             // menuRelatoriosEstoque
             // 
             this.menuRelatoriosEstoque.Name = "menuRelatoriosEstoque";
-            this.menuRelatoriosEstoque.Size = new System.Drawing.Size(188, 22);
+            this.menuRelatoriosEstoque.Size = new System.Drawing.Size(228, 26);
             this.menuRelatoriosEstoque.Text = "Controle de Estoque";
             // 
             // menuRelatoriosPagamentos
             // 
             this.menuRelatoriosPagamentos.Name = "menuRelatoriosPagamentos";
-            this.menuRelatoriosPagamentos.Size = new System.Drawing.Size(188, 22);
+            this.menuRelatoriosPagamentos.Size = new System.Drawing.Size(228, 26);
             this.menuRelatoriosPagamentos.Text = "Folha de Pagamentos";
             // 
             // menuRelatoriosIcms
             // 
             this.menuRelatoriosIcms.Name = "menuRelatoriosIcms";
-            this.menuRelatoriosIcms.Size = new System.Drawing.Size(188, 22);
+            this.menuRelatoriosIcms.Size = new System.Drawing.Size(228, 26);
             this.menuRelatoriosIcms.Text = "ICMS";
             // 
             // menuRelatoriosDre
             // 
             this.menuRelatoriosDre.Name = "menuRelatoriosDre";
-            this.menuRelatoriosDre.Size = new System.Drawing.Size(188, 22);
+            this.menuRelatoriosDre.Size = new System.Drawing.Size(228, 26);
             this.menuRelatoriosDre.Text = "DRE";
             // 
-            // menuCadastrar
+            // menuGerenciar
             // 
-            this.menuCadastrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuCadastrarClientes,
-            this.menuCadastrarFornecedores,
-            this.menuCadastrarProdutos});
-            this.menuCadastrar.Name = "menuCadastrar";
-            this.menuCadastrar.Size = new System.Drawing.Size(69, 20);
-            this.menuCadastrar.Text = "Cadastrar";
+            this.menuGerenciar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuGerenciarClientes,
+            this.menuGerenciarFornecedores,
+            this.menuGerenciarFuncionarios,
+            this.menuGerenciarProdutos});
+            this.menuGerenciar.Name = "menuGerenciar";
+            this.menuGerenciar.Size = new System.Drawing.Size(89, 25);
+            this.menuGerenciar.Text = "Gerenciar";
             // 
-            // menuCadastrarClientes
+            // menuGerenciarClientes
             // 
-            this.menuCadastrarClientes.Name = "menuCadastrarClientes";
-            this.menuCadastrarClientes.Size = new System.Drawing.Size(145, 22);
-            this.menuCadastrarClientes.Text = "Clientes";
+            this.menuGerenciarClientes.Name = "menuGerenciarClientes";
+            this.menuGerenciarClientes.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarClientes.Text = "Clientes";
             // 
-            // menuCadastrarFornecedores
+            // menuGerenciarFornecedores
             // 
-            this.menuCadastrarFornecedores.Name = "menuCadastrarFornecedores";
-            this.menuCadastrarFornecedores.Size = new System.Drawing.Size(145, 22);
-            this.menuCadastrarFornecedores.Text = "Fornecedores";
+            this.menuGerenciarFornecedores.Name = "menuGerenciarFornecedores";
+            this.menuGerenciarFornecedores.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarFornecedores.Text = "Fornecedores";
             // 
-            // menuCadastrarProdutos
+            // menuGerenciarFuncionarios
             // 
-            this.menuCadastrarProdutos.Name = "menuCadastrarProdutos";
-            this.menuCadastrarProdutos.Size = new System.Drawing.Size(145, 22);
-            this.menuCadastrarProdutos.Text = "Produtos";
+            this.menuGerenciarFuncionarios.Name = "menuGerenciarFuncionarios";
+            this.menuGerenciarFuncionarios.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarFuncionarios.Text = "Funcionários";
+            // 
+            // menuGerenciarProdutos
+            // 
+            this.menuGerenciarProdutos.Name = "menuGerenciarProdutos";
+            this.menuGerenciarProdutos.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarProdutos.Text = "Produtos";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(854, 546);
             this.Controls.Add(this.menuPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuPrincipal;
@@ -254,10 +263,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuRelatoriosPagamentos;
         private System.Windows.Forms.ToolStripMenuItem menuRelatoriosIcms;
         private System.Windows.Forms.ToolStripMenuItem menuRelatoriosDre;
-        private System.Windows.Forms.ToolStripMenuItem menuCadastrar;
-        private System.Windows.Forms.ToolStripMenuItem menuCadastrarClientes;
-        private System.Windows.Forms.ToolStripMenuItem menuCadastrarFornecedores;
-        private System.Windows.Forms.ToolStripMenuItem menuCadastrarProdutos;
+        private System.Windows.Forms.ToolStripMenuItem menuGerenciar;
+        private System.Windows.Forms.ToolStripMenuItem menuGerenciarClientes;
+        private System.Windows.Forms.ToolStripMenuItem menuGerenciarFornecedores;
+        private System.Windows.Forms.ToolStripMenuItem menuGerenciarProdutos;
+        private System.Windows.Forms.ToolStripMenuItem menuGerenciarFuncionarios;
     }
 }
 
