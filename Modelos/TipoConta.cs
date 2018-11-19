@@ -1,6 +1,6 @@
 ﻿namespace Modelos
 {
-    public enum Tipo
+    public enum TipoConta
     {
         Ativo,
         Passivo

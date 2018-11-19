@@ -4,15 +4,17 @@ namespace Modelos
 {
     public class Operacao
     {
-        public int Id { get; private set; }
-        public DateTime Data { get; private set; }
-        public string Local { get; private set; }
-        public ContaT Destino { get; private set; }
-        public ContaT Origem { get; private set; }
-        public string Historico { get; private set; }
-        public double Valor { get; private set; }
+        public int Id { get; set; }
+        public DateTime Data { get; set; }
+        public string Local { get; set; }
+        public int Destino { get; set; }
+        public int Origem { get; set; }
+        public string Historico { get; set; }
+        public double Valor { get; set; }
 
-        public Operacao(int id, DateTime data, string local, ContaT destino, ContaT origem, string historico, double valor)
+        public Operacao() { }
+
+        public Operacao(int id, DateTime data, string local, int destino, int origem, string historico, double valor)
         {
             Id = id;
             Data = data;

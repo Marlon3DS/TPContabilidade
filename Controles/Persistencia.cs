@@ -1,13 +1,14 @@
 ﻿using AcessoDados;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Controles
 {
-    abstract class Persistencia
+    public abstract class Persistencia
     {
         //Variavel de Instancia de Acesso a Bancos SQL Server
-        public AcessoSqlServer Acesso { get; protected set; }
+        protected AcessoSqlServer Acesso = new AcessoSqlServer();
 
         public virtual string Inserir(object objeto, Modelo modelo)
         {
@@ -27,27 +28,21 @@ namespace Controles
             return ExecutarMetodo(modelo, Metodo.Excluir);
         }
 
-        //Metodo Sobrecarregado para Consultar Tudo
-        public virtual DataTable Consultar(Modelo modelo)
+        //Metodo com parametros Opcionais para Consultar por Id ou Tudo
+        protected virtual DataTable Consultar(Modelo modelo, object objeto = null)
         {
             try
             {
-                Acesso.LimparParametros();
-                return Acesso.MetodoConsulta(CommandType.StoredProcedure, "usp" + modelo.ToString() + Metodo.ConsultarTudo.ToString());
-            }
-            catch (ConexaoException mensagem)
-            {
-                throw new Exception(mensagem.Message);
-            }
-        }
-
-        //Metodo Sobrecarregado para Consultar por Id
-        public virtual DataTable Consultar(object objeto, Modelo modelo)
-        {
-            try
-            {
-                EmpacotarParametros(objeto, Metodo.ConsultarId);
-                return Acesso.MetodoConsulta(CommandType.StoredProcedure, "usp" + modelo.ToString() + Metodo.ConsultarId.ToString());
+                if (objeto == null)
+                {
+                    Acesso.LimparParametros();
+                    return Acesso.MetodoConsulta(CommandType.StoredProcedure, "usp" + modelo.ToString() + Metodo.ConsultarTudo.ToString());
+                }
+                else
+                {
+                    EmpacotarParametros(objeto, Metodo.ConsultarId);
+                    return Acesso.MetodoConsulta(CommandType.StoredProcedure, "usp" + modelo.ToString() + Metodo.ConsultarId.ToString());
+                }
             }
             catch (ConexaoException mensagem)
             {
@@ -69,5 +64,6 @@ namespace Controles
                 return mensagem.Message;
             }
         }
+
     }
 }

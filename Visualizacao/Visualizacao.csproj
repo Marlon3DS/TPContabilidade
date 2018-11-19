@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,12 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuracoes\frmContaCad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\frmContaCad.Designer.cs">
+      <DependentUpon>frmContaCad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\frmContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\frmContas.Designer.cs">
+      <DependentUpon>frmContas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracoes\frmEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Configuracoes\frmEmpresa.Designer.cs">
       <DependentUpon>frmEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Diario\frmLancamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diario\frmLancamento.Designer.cs">
+      <DependentUpon>frmLancamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diario\LancamentoException.cs" />
+    <Compile Include="Diario\TipoLancamento.cs" />
+    <Compile Include="TipoAcao.cs" />
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,8 +82,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Configuracoes\frmEmpresa.resx">
-      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="Configuracoes\frmContaCad.resx">
+      <DependentUpon>frmContaCad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\frmContas.resx">
+      <DependentUpon>frmContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diario\frmLancamento.resx">
+      <DependentUpon>frmLancamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -89,10 +117,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{93e06863-a088-4ff0-83a1-01f7fe06aff5}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelos\Modelos.csproj">
       <Project>{e100bbca-4ea2-4c75-8d39-e0c759f676cb}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

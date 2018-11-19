@@ -118,6 +118,7 @@
             this.menuConfigContas.Name = "menuConfigContas";
             this.menuConfigContas.Size = new System.Drawing.Size(212, 26);
             this.menuConfigContas.Text = "Plano de Contas";
+            this.menuConfigContas.Click += new System.EventHandler(this.menuConfigContas_Click);
             // 
             // menuDiario
             // 
@@ -134,6 +135,7 @@
             this.menuDiarioCompra.Name = "menuDiarioCompra";
             this.menuDiarioCompra.Size = new System.Drawing.Size(209, 26);
             this.menuDiarioCompra.Text = "Lançar Compra";
+            this.menuDiarioCompra.Click += new System.EventHandler(this.menuDiarioCompra_Click);
             // 
             // menuDiarioVenda
             // 
@@ -203,25 +205,25 @@
             // menuGerenciarClientes
             // 
             this.menuGerenciarClientes.Name = "menuGerenciarClientes";
-            this.menuGerenciarClientes.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarClientes.Size = new System.Drawing.Size(174, 26);
             this.menuGerenciarClientes.Text = "Clientes";
             // 
             // menuGerenciarFornecedores
             // 
             this.menuGerenciarFornecedores.Name = "menuGerenciarFornecedores";
-            this.menuGerenciarFornecedores.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarFornecedores.Size = new System.Drawing.Size(174, 26);
             this.menuGerenciarFornecedores.Text = "Fornecedores";
             // 
             // menuGerenciarFuncionarios
             // 
             this.menuGerenciarFuncionarios.Name = "menuGerenciarFuncionarios";
-            this.menuGerenciarFuncionarios.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarFuncionarios.Size = new System.Drawing.Size(174, 26);
             this.menuGerenciarFuncionarios.Text = "Funcionários";
             // 
             // menuGerenciarProdutos
             // 
             this.menuGerenciarProdutos.Name = "menuGerenciarProdutos";
-            this.menuGerenciarProdutos.Size = new System.Drawing.Size(180, 26);
+            this.menuGerenciarProdutos.Size = new System.Drawing.Size(174, 26);
             this.menuGerenciarProdutos.Text = "Produtos";
             // 
             // frmPrincipal
